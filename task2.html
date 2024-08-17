@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>task2</title>
+    </head>
+    <body>
+        <button id="btn1" onclick="pastehello()">Add hello</button>
+        <div id="paste"></div>
+        <script>
+            const button1=document.getElementById("btn1")
+            const pastdown =document.getElementById("paste")
+
+            function pastehello(){
+                 const h1=document.createElement("h1")
+                 h1.textContent="hello"
+                 pastdown.append(h1)
+            } 
+
+        </script>
+    </body>
+</html>

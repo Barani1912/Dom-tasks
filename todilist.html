@@ -1,0 +1,21 @@
+<input id="input">
+<button onclick="addList()">Add task</button>
+<ul id="list-container">
+    <li>Task-1
+        <button onclick="deleteList(event)">Delete</button>
+    </li>
+</ul>
+
+<script>
+    const input=document.getElementById("input")
+    const list =document.getElementById("list-container")
+
+    function addList(){
+        const newList = document.createElement("li")
+        newList.innerHTML=input.value +"<button onclick=deleteList(event)>Delete</button>"
+        list.append(newList)
+    }
+    function deleteList(event){
+        event.target.parentElement.remove()
+    }
+</script>

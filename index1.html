@@ -1,0 +1,19 @@
+<input id="input1">
+<input id="input2">
+<button onclick="addSum()">Add</button>
+<p id="output">Result = </p>
+
+<script>
+    const box1 = document.getElementById("input1")
+    const box2 = document.getElementById("input2")
+    const result = document.getElementById("output")
+
+    
+   
+    function addSum(){
+        const out1 =Number(box1.value)
+        const out2 =Number(box2.value)
+        result.textContent+= out1+out2
+    }
+  
+</script>

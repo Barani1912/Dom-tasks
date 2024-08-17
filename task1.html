@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>task1</title>
+    </head>
+    <body>
+        <input type="text" id="box1" onkeydown="textbox()">
+        <h1 id="div1"></h1>
+
+
+
+        <script>
+
+            const box = document.getElementById("box1")
+            const head1 = document.getElementById("div1")
+
+        function textbox(){
+            const storage =box.value
+            head1.textContent=storage
+        }
+           
+        </script>
+    </body>
+</html>

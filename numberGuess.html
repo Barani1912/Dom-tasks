@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>guess the num</title>
+    </head>
+    <body>
+        <div id="container">
+            <div id="div"></div>
+            <h2>Guess the Number</h2>
+            <input id="num" type="number">
+            <p id="answer"></p>
+            <p id="score">Your score is =</p>
+            <button onclick="checkNum()">check</button>
+
+        </div>
+
+        <style>
+            #container{
+                text-align: center;
+            }
+            #num{
+                border-color:chartreuse;
+                border-radius: 5%;
+            }
+            button{
+                background-color: chartreuse;
+                border-radius:50%;
+                padding: 5px;
+            }
+            /* #div img{
+                transition: all ease-in 3s;
+            } */
+        </style>
+
+        <script>
+
+            const guess =document.getElementById("num")
+            const ans =document.getElementById("answer")
+            const gain =document.getElementById("score")
+            const contain =document.getElementById("div")
+        
+            let point =10
+            gain.textContent="Your score is ="+point
+            
+        
+        function checkNum(){
+        
+            const n = Math.random()
+            const secretNum = Math.floor((n*10)+1)
+            const guessedNum = Number(guess.value)
+            
+        
+            if(guessedNum==secretNum){
+            ans.textContent="You guessed Correct!!!"
+            gain.textContent="Your score is ="+point
+             contain.innerHTML=`<img src="happy_emoji.png" height="40px" width="40px">`
+           }
+           else{
+            ans.textContent="You guessed Wrong..."
+            point-=1
+            gain.textContent="Your score is ="+point
+            contain.innerHTML=`<img src="sad_emoji.png" height="40px" width="40px">`
+           }
+
+           if(point<1){
+            ans.textContent=""
+            gain.textContent="You loss the game..."
+           }
+        
+        }
+           
+        </script>
+
+    </body>
+</html>
+
+

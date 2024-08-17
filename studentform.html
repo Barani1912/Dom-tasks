@@ -1,0 +1,152 @@
+<html>
+<head>
+    <title>Student Form</title>
+</head>
+<body>
+<h1>Student Form</h1>
+<form id="form1">
+    <table>
+        <tr>
+            <th>Name</th>
+            <td><input type="text" id="name" required></td>
+        </tr>
+        <tr>
+            <th>Age</th>
+            <td><input type="number" id="age" required></td>
+        </tr>
+        <tr>
+            <th>Gender</th>
+            
+            <td>
+                <select id="gen" >
+                    <option>Male</option>
+                    <option>Female</option>
+
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Course</th>
+            <td>
+                <select id="options" >
+                    <option>HTML</option>
+                    <option>CSS</option>
+                    <option>Js</option>
+                    <option>React</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>E-Mail</th>
+            <td><input type="email" id="email" required></td>
+        </tr>
+        <tr>
+          <td colspan="2"> <button type="submit" onclick="addInfo()">Save</button></td>
+        </tr>
+        
+    </table>
+
+</form>
+
+
+<form >
+    <table id="table2">
+        <tr >
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>GENDER</th>
+            <th>COURSE</th>
+            <th>EMAIL</th>
+            <th>ACTION</th>
+        </tr>
+        <tr>
+            <td>Barani</td>
+            <td>22</td>
+            <td>male</td>
+            <td>html</td>
+            <td>baranivignesh0024@gmail.com</td>
+            <td><button onclick="deleteInfo(event)">Delete</button></td>
+        </tr>
+
+    </table>
+</form>
+
+<style>
+    *{
+        text-align: center;
+    }
+    form{
+        display: flex;
+        justify-content: center;
+    }
+    table{
+        border-collapse: collapse;
+    }
+    td , th{
+        border: 1px solid black;
+        padding: 7px;
+    }
+   #options{
+    padding: 7 55 7 55;
+   }
+   #gen{
+    padding: 7 50 7 50;
+   }
+   button{
+    padding: 5 102 5 102;
+   }
+
+</style>
+
+
+<script>
+
+const input1=document.getElementById("name")
+const input2=document.getElementById("age")
+const input3=document.getElementById("gen")
+
+const input5=document.getElementById("options")
+const input6=document.getElementById("email")
+
+const output1=document.getElementById("table2")
+
+function addInfo(){
+    document.getElementById("form1").addEventListener("submit",function(event){
+        event.preventDefault()
+    })
+const newdata1 = document.createElement("tr")
+newdata1.innerHTML=`<td>${input1.value}</td>
+            <td>${input2.value}</td>
+            <td>${input3.value}</td>
+            <td>${input5.value}</td>
+            <td>${input6.value}</td>
+            <td><button onclick="deleteInfo(event)">Delete</button></td>`
+output1.append(newdata1)
+}
+
+function deleteInfo(event){
+ event.target.parentElement.parentElement.remove()
+}
+// const newdata2 = document.createElement("td")
+// newdata2.textContent=input2.value
+// output1.append(newdata2)
+
+// const newdata3 = document.createElement("td")
+// newdata3.textContent=input3.value
+// output1.append(newdata3)
+
+// const newdata4 = document.createElement("td")
+// newdata4.textContent=input5.value
+// output1.append(newdata4)
+
+// const newdata5 = document.createElement("td")
+// newdata5.textContent=input6.value
+// output1.append(newdata5)
+
+
+
+
+</script>
+
+</body>
+</html>

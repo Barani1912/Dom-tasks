@@ -1,0 +1,39 @@
+<!-- <button id="colorred" onclick="changecolor()">change</button>
+
+<script>
+
+const red =document.getElementById("colorred")
+function changecolor(){
+    red.style.backgroundColor=("red")
+}
+
+</script> -->
+
+
+/////////////////////////////////////////////////////////////////
+
+<h1 id="head">Name</h1>
+<button class="btn1"onclick="clickevent(event)">Barani</button>
+<button class="btn2"onclick="clickevent(event)">Vignesh</button>
+<button class="btn3"onclick="clickevent(event)">Rambo</button>
+
+
+<script>
+const head=document.getElementById("head")
+
+const button1=document.querySelector(".btn1")
+const button2=document.querySelector(".btn2")
+const button3=document.querySelector(".btn3")
+
+
+function clickevent(event){
+head.textContent=event.target.textContent//new way...best way...
+}
+// function clickbtn2(event){
+// head.textContent="Vignesh"
+// }
+// function clickbtn3(event){
+// head.textContent="Rambo"
+// }
+
+</script>
